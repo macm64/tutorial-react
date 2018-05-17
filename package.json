@@ -1,7 +1,6 @@
 {
   "name": "react-tutorial",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -17,8 +16,8 @@
     "webpack-dev-server": "^2.9.7"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --progress --colors",
+    "build": "webpack --watch --colors",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }

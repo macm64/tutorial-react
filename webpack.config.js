@@ -1,6 +1,6 @@
 var path = require('path');
 
-module.exports: {
+module.exports = {
   entry: {
     app: path.join(__dirname, '/src/index.js')
   },
@@ -18,19 +18,21 @@ module.exports: {
     inline: true
   },
   module: {
-    loaders: [{
-      test: /(\.js|.jsx)$/,
-      loader: 'babel-loader',
-      excludes: '/node-modules/',
-      query: {
-        presets: ['es2015', 'react']
+    loaders: [
+      {
+        test: /(\.js|.jsx)$/,
+        loader: 'babel-loader',
+        exclude: '/node-modules/',
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }, {
+        test: /(\.css)$/,
+        loader: 'style-loader'
+      }, {
+        test: /(\.css)$/,
+        loader: 'css-loader'
       }
-    } {
-      test: /(\.css)$/,
-      loader: 'style-loader'
-    } {
-      test: /(\.css)$/,
-      loader: 'css-loader'
-    }]
+    ]
   }
 }
